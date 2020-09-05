@@ -19,6 +19,8 @@ class PokemonListViewController: BaseViewController ,BaseViewControllerProtocol,
 		// Do any additional setup after loading the view.
 		bindViewModel()
 		setupView()
+
+
 	}
 
 	func bindViewModel() {
@@ -49,6 +51,12 @@ class PokemonListViewController: BaseViewController ,BaseViewControllerProtocol,
 	}
 
 	func setupView() {
+	
+
+		if #available(iOS 11, *) {}
+		else {
+			self.edgesForExtendedLayout = []
+		}
 		self.refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
 		self.tableView.addSubview(refreshControl)
 		self.pokomenListViewModel.startFetchingData()

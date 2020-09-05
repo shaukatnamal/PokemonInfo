@@ -46,6 +46,7 @@ class PokemonDetailViewController: BaseViewController ,BaseViewControllerProtoco
 	}
 
 	func setupView() {
+
 		let name = sourceViewModel.pokemon.name ?? ""
 		let url = sourceViewModel.pokemon.url ?? ""
 		pokemonDetailViewModel.startFetchingDetail(url: url,pokemonName:name)
@@ -62,7 +63,7 @@ class PokemonDetailViewController: BaseViewController ,BaseViewControllerProtoco
 		{
 			switch ability {
 				case .normal(let viewModel):
-					abilityLabel.text! += (viewModel.abilityItem.ability?.abilityName)! + ", "
+					abilityLabel.text! += (viewModel.abilityItem.ability?.abilityName)! + " "
 					if let imageURL = URL(string: sourceViewModel.pokemon.imgUrl!){
 						pokoImageView.af.setImage(withURL: imageURL)
 				}

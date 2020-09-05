@@ -15,7 +15,7 @@ public class BaseViewController: UIViewController {
 	var loadingIndicator : UIView?
 
 	public func showActivityIndicator(onView : UIView) {
-		let activityIndicator = UIActivityIndicatorView.init(style: .large)
+		let activityIndicator = UIActivityIndicatorView.init(style: .gray)
 		activityIndicator.startAnimating()
 		activityIndicator.center = onView.center
 		DispatchQueue.main.async {
